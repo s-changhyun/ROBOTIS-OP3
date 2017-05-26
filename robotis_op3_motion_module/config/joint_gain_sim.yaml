@@ -1,0 +1,98 @@
+head_pan:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+head_tilt:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+l_ank_pitch:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_ank_roll:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_hip_pitch:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_hip_roll:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_hip_yaw:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_knee:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_ank_pitch:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_ank_roll:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_hip_pitch:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_hip_roll:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_hip_yaw:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_knee:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0.1
+  fb_p_torque: 0
+  ff_joint_velocity: 0.1
+  ff_torque: 1

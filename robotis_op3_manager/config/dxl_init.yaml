@@ -1,0 +1,59 @@
+l_hip_yaw :              # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+l_hip_roll :             # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+l_hip_pitch :            # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+l_knee :                 # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+l_ank_pitch :            # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+l_ank_roll :             # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+r_hip_yaw :              # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+r_hip_roll :             # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+r_hip_pitch :            # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+r_knee :                 # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+r_ank_pitch :            # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0
+
+r_ank_roll :             # XH-430
+   return_delay_time     : 1    
+   operating_mode        : 0     
+   goal_current          : 0

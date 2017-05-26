@@ -1,0 +1,2446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowDesign</class>
+ <widget class="QMainWindow" name="MainWindowDesign">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1697</width>
+    <height>920</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QRosApp</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../robotis_op2_gui/resources/images.qrc">
+    <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="Australia"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout">
+    <item>
+     <widget class="QTabWidget" name="tab_manager">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="locale">
+       <locale language="English" country="Australia"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_status">
+       <attribute name="title">
+        <string>Ros Communications</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox_12">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Logging</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QListView" name="view_logging"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1697</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;App</string>
+    </property>
+    <addaction name="action_Preferences"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAbout_Qt"/>
+    <addaction name="separator"/>
+    <addaction name="action_Quit"/>
+   </widget>
+   <addaction name="menu_File"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dock_status">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1040</width>
+     <height>878</height>
+    </size>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Command Panel</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="tab">
+        <attribute name="title">
+         <string>Joint Control</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Set Control</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="1">
+             <widget class="QPushButton" name="set_walking_ctrl_button">
+              <property name="text">
+               <string>Walking Control</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="set_joint_ctrl_button">
+              <property name="text">
+               <string>Joint Control</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QGroupBox" name="groupBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>1000</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>Joint Controller</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="9" column="4">
+             <widget class="QDoubleSpinBox" name="id_15_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="6">
+             <widget class="QDoubleSpinBox" name="id_14_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="2">
+             <widget class="QDoubleSpinBox" name="id_16_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="5">
+             <widget class="QDoubleSpinBox" name="id_15_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="3">
+             <widget class="QDoubleSpinBox" name="id_15_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="3">
+             <widget class="QDoubleSpinBox" name="id_16_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="5">
+             <widget class="QDoubleSpinBox" name="id_14_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="6">
+             <widget class="QDoubleSpinBox" name="id_16_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="2">
+             <widget class="QDoubleSpinBox" name="id_15_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="2">
+             <widget class="QDoubleSpinBox" name="id_13_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="4">
+             <widget class="QDoubleSpinBox" name="id_10_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="5">
+             <widget class="QDoubleSpinBox" name="id_18_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="6">
+             <widget class="QDoubleSpinBox" name="id_15_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QDoubleSpinBox" name="id_9_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="3">
+             <widget class="QDoubleSpinBox" name="id_13_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="2">
+             <widget class="QDoubleSpinBox" name="id_18_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QDoubleSpinBox" name="id_11_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="2">
+             <widget class="QDoubleSpinBox" name="id_14_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="4">
+             <widget class="QDoubleSpinBox" name="id_13_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="4">
+             <widget class="QDoubleSpinBox" name="id_9_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDoubleSpinBox" name="id_7_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="4">
+             <widget class="QDoubleSpinBox" name="id_16_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="4">
+             <widget class="QDoubleSpinBox" name="id_11_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QDoubleSpinBox" name="id_8_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="3">
+             <widget class="QDoubleSpinBox" name="id_11_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="3">
+             <widget class="QDoubleSpinBox" name="id_14_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QDoubleSpinBox" name="id_9_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="6">
+             <widget class="QDoubleSpinBox" name="id_10_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="5">
+             <widget class="QDoubleSpinBox" name="id_13_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>ff_joint_vel.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>[ID : 02] l_hip_yaw</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>ff_torque</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="6">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>fb_i_joint_pos.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>[ID : 12] l_ank_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="5">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>fb_d_joint_pos.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>[ID : 11] r_ank_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>[ID : 04] l_hip_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>[ID : 03] r_hip_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>[ID : 10] l_ank_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>fb_p_torque</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>fb_p_joint_pos.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>[ID : 05] r_hip_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>[ID : 07] r_knee</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>[ID : 09] r_ank_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>[ID : 08] l_knee</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>[ID : 06] l_hip_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1" colspan="3">
+             <widget class="QPushButton" name="zero_gain_button">
+              <property name="text">
+               <string>Zero Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="4" colspan="3">
+             <widget class="QPushButton" name="save_gain_button">
+              <property name="text">
+               <string>Save Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="1" colspan="3">
+             <widget class="QPushButton" name="load_gain_button">
+              <property name="text">
+               <string>Load Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="4" colspan="3">
+             <widget class="QPushButton" name="set_gain_button">
+              <property name="text">
+               <string>Set Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>[ID : 01] r_hip_yaw</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="5">
+             <widget class="QDoubleSpinBox" name="id_16_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="4">
+             <widget class="QDoubleSpinBox" name="id_14_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="5">
+             <widget class="QDoubleSpinBox" name="id_8_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QDoubleSpinBox" name="id_15_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QDoubleSpinBox" name="id_8_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="6">
+             <widget class="QDoubleSpinBox" name="id_13_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QDoubleSpinBox" name="id_12_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QDoubleSpinBox" name="id_9_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QDoubleSpinBox" name="id_14_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QDoubleSpinBox" name="id_7_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="4">
+             <widget class="QDoubleSpinBox" name="id_17_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="5">
+             <widget class="QDoubleSpinBox" name="id_7_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="6">
+             <widget class="QDoubleSpinBox" name="id_11_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="5">
+             <widget class="QDoubleSpinBox" name="id_9_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="5">
+             <widget class="QDoubleSpinBox" name="id_17_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="4">
+             <widget class="QDoubleSpinBox" name="id_12_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="6">
+             <widget class="QDoubleSpinBox" name="id_9_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QDoubleSpinBox" name="id_10_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QDoubleSpinBox" name="id_7_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="2">
+             <widget class="QDoubleSpinBox" name="id_12_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="3">
+             <widget class="QDoubleSpinBox" name="id_18_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="2">
+             <widget class="QDoubleSpinBox" name="id_17_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QDoubleSpinBox" name="id_17_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="QDoubleSpinBox" name="id_10_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="5">
+             <widget class="QDoubleSpinBox" name="id_12_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QDoubleSpinBox" name="id_7_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="6">
+             <widget class="QDoubleSpinBox" name="id_17_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="6">
+             <widget class="QDoubleSpinBox" name="id_12_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QDoubleSpinBox" name="id_16_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="5">
+             <widget class="QDoubleSpinBox" name="id_11_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QDoubleSpinBox" name="id_10_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="6">
+             <widget class="QDoubleSpinBox" name="id_7_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="3">
+             <widget class="QDoubleSpinBox" name="id_17_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="5">
+             <widget class="QDoubleSpinBox" name="id_10_fb_d_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="4">
+             <widget class="QDoubleSpinBox" name="id_18_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QDoubleSpinBox" name="id_8_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="3">
+             <widget class="QDoubleSpinBox" name="id_12_ff_joint_vel_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="6">
+             <widget class="QDoubleSpinBox" name="id_18_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QDoubleSpinBox" name="id_13_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="1">
+             <widget class="QDoubleSpinBox" name="id_18_ff_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="6">
+             <widget class="QDoubleSpinBox" name="id_8_fb_i_joint_pos_spinbox">
+              <property name="decimals">
+               <number>6</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="2">
+             <widget class="QDoubleSpinBox" name="id_11_fb_p_torque_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="4">
+             <widget class="QDoubleSpinBox" name="id_8_fb_p_joint_pos_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.100000000000000</double>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="6" column="1">
+             <widget class="QDoubleSpinBox" name="external_force_x_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="4">
+             <widget class="QPushButton" name="set_external_force_button">
+              <property name="text">
+               <string>Set External Force</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QPushButton" name="set_value_button">
+              <property name="text">
+               <string>Set Value</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QComboBox" name="joint_name_combobox">
+              <item>
+               <property name="text">
+                <string>r_hip_yaw</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>l_hip_yaw</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>r_hip_roll</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>l_hip_roll</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>r_hip_pitch</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>l_hip_pitch</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>r_knee</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>l_knee</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>r_ank_pitch</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>l_ank_pitch</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>r_ank_roll</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>l_ank_roll</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Joint Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_21">
+              <property name="text">
+               <string>Movement Time</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDoubleSpinBox" name="mov_time_spinbox">
+              <property name="singleStep">
+               <double>0.500000000000000</double>
+              </property>
+              <property name="value">
+               <double>3.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_23">
+              <property name="text">
+               <string>Group Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QComboBox" name="joint_group_combobox">
+              <item>
+               <property name="text">
+                <string>foot</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>body</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ankle</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>knee</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>hip</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>External Force x</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="2">
+             <widget class="QLabel" name="label_24">
+              <property name="text">
+               <string>External Force y</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QDoubleSpinBox" name="joint_value_spinbox">
+              <property name="prefix">
+               <string/>
+              </property>
+              <property name="suffix">
+               <string> [deg]</string>
+              </property>
+              <property name="minimum">
+               <double>-360.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>360.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.500000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>Goal Position</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="3">
+             <widget class="QLabel" name="label_25">
+              <property name="text">
+               <string>External Force z</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="2">
+             <widget class="QDoubleSpinBox" name="external_force_y_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="3">
+             <widget class="QDoubleSpinBox" name="external_force_z_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-100000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_26">
+              <property name="text">
+               <string>Goal Torque Offset</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QDoubleSpinBox" name="torque_offset_spinbox">
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-10000.000000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>10000.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QPushButton" name="apply_torque_offset_button">
+              <property name="text">
+               <string>Apply</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="QPushButton" name="load_torque_offset_button">
+              <property name="text">
+               <string>Load</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="4">
+             <widget class="QPushButton" name="save_torque_offset_button">
+              <property name="text">
+               <string>Save</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_2">
+        <attribute name="title">
+         <string>External Control</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="0" column="0">
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>Friction</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="13" column="2">
+             <widget class="QPushButton" name="load_friction_gain_button">
+              <property name="text">
+               <string>Load Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_29">
+              <property name="text">
+               <string>Friction Dyanmic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QDoubleSpinBox" name="id_2_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="3">
+             <widget class="QDoubleSpinBox" name="id_7_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_33">
+              <property name="text">
+               <string>[ID : 04] l_hip_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_28">
+              <property name="text">
+               <string>[ID : 02] l_hip_yaw</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_32">
+              <property name="text">
+               <string>[ID : 03] r_hip_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_27">
+              <property name="text">
+               <string>Friction Static</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_34">
+              <property name="text">
+               <string>[ID : 05] r_hip_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_35">
+              <property name="text">
+               <string>[ID : 06] l_hip_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QLabel" name="label_40">
+              <property name="text">
+               <string>[ID : 11] r_ank_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QLabel" name="label_41">
+              <property name="text">
+               <string>[ID : 12] l_ank_roll</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_37">
+              <property name="text">
+               <string>[ID : 08] l_knee</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="label_38">
+              <property name="text">
+               <string>[ID : 09] r_ank_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="label_39">
+              <property name="text">
+               <string>[ID : 10] l_ank_pitch</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_30">
+              <property name="text">
+               <string>Friction Viscous</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_31">
+              <property name="text">
+               <string>[ID : 01] r_hip_yaw</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_36">
+              <property name="text">
+               <string>[ID : 07] r_knee</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDoubleSpinBox" name="id_1_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QDoubleSpinBox" name="id_2_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QDoubleSpinBox" name="id_3_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QDoubleSpinBox" name="id_4_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QDoubleSpinBox" name="id_5_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QDoubleSpinBox" name="id_6_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QDoubleSpinBox" name="id_7_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QDoubleSpinBox" name="id_8_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QDoubleSpinBox" name="id_9_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QDoubleSpinBox" name="id_10_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QDoubleSpinBox" name="id_11_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="1">
+             <widget class="QDoubleSpinBox" name="id_12_fs_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="3">
+             <widget class="QPushButton" name="save_friction_gain_button">
+              <property name="text">
+               <string>Save Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QDoubleSpinBox" name="id_1_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QDoubleSpinBox" name="id_3_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QDoubleSpinBox" name="id_4_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="2">
+             <widget class="QDoubleSpinBox" name="id_5_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="2">
+             <widget class="QDoubleSpinBox" name="id_6_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="2">
+             <widget class="QDoubleSpinBox" name="id_7_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="2">
+             <widget class="QDoubleSpinBox" name="id_8_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="2">
+             <widget class="QDoubleSpinBox" name="id_9_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="2">
+             <widget class="QDoubleSpinBox" name="id_10_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QDoubleSpinBox" name="id_1_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="2">
+             <widget class="QDoubleSpinBox" name="id_11_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="2">
+             <widget class="QDoubleSpinBox" name="id_12_fd_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QDoubleSpinBox" name="id_2_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QDoubleSpinBox" name="id_3_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="QDoubleSpinBox" name="id_4_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="3">
+             <widget class="QDoubleSpinBox" name="id_5_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="3">
+             <widget class="QDoubleSpinBox" name="id_6_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="3">
+             <widget class="QDoubleSpinBox" name="id_8_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="3">
+             <widget class="QDoubleSpinBox" name="id_9_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="3">
+             <widget class="QDoubleSpinBox" name="id_10_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="3">
+             <widget class="QDoubleSpinBox" name="id_11_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="3">
+             <widget class="QDoubleSpinBox" name="id_12_fv_gain_spinbox">
+              <property name="decimals">
+               <number>5</number>
+              </property>
+              <property name="maximum">
+               <double>100000.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QPushButton" name="zero_friction_gain_button">
+              <property name="text">
+               <string>Zero Gain</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QPushButton" name="set_friction_gain_button">
+              <property name="text">
+               <string>Set Gain</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame_2">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="set_mode_button">
+          <property name="text">
+           <string>Set Mode</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="quit_button">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Quit</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="gazebo_detach_button">
+          <property name="text">
+           <string>Gazebo Detach OP2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="gazebo_init_button">
+          <property name="text">
+           <string>Gaebo Lower OP2 Down</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="action_Quit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="action_Preferences">
+   <property name="text">
+    <string>&amp;Preferences</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About &amp;Qt</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>view_logging</tabstop>
+  <tabstop>id_7_ff_torque_spinbox</tabstop>
+  <tabstop>id_8_ff_torque_spinbox</tabstop>
+  <tabstop>id_9_ff_torque_spinbox</tabstop>
+  <tabstop>id_10_ff_torque_spinbox</tabstop>
+  <tabstop>id_11_ff_torque_spinbox</tabstop>
+  <tabstop>id_12_ff_torque_spinbox</tabstop>
+  <tabstop>id_13_ff_torque_spinbox</tabstop>
+  <tabstop>id_14_ff_torque_spinbox</tabstop>
+  <tabstop>id_15_ff_torque_spinbox</tabstop>
+  <tabstop>id_16_ff_torque_spinbox</tabstop>
+  <tabstop>id_17_ff_torque_spinbox</tabstop>
+  <tabstop>id_18_ff_torque_spinbox</tabstop>
+  <tabstop>id_7_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_8_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_9_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_10_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_11_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_12_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_13_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_14_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_15_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_16_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_17_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_18_fb_p_torque_spinbox</tabstop>
+  <tabstop>id_7_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_8_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_9_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_10_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_11_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_12_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_13_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_14_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_15_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_16_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_17_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_18_ff_joint_vel_spinbox</tabstop>
+  <tabstop>id_7_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_8_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_9_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_10_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_11_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_12_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_13_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_14_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_15_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_16_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_17_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_18_fb_p_joint_pos_spinbox</tabstop>
+  <tabstop>id_7_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_8_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_9_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_10_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_11_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_12_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_13_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_14_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_15_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_16_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_17_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_18_fb_d_joint_pos_spinbox</tabstop>
+  <tabstop>id_7_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_8_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_9_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_10_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_11_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_12_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_13_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_14_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_15_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_16_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_17_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>id_18_fb_i_joint_pos_spinbox</tabstop>
+  <tabstop>zero_gain_button</tabstop>
+  <tabstop>load_gain_button</tabstop>
+  <tabstop>set_gain_button</tabstop>
+  <tabstop>save_gain_button</tabstop>
+  <tabstop>joint_name_combobox</tabstop>
+  <tabstop>mov_time_spinbox</tabstop>
+  <tabstop>joint_value_spinbox</tabstop>
+  <tabstop>set_value_button</tabstop>
+  <tabstop>joint_group_combobox</tabstop>
+  <tabstop>external_force_x_spinbox</tabstop>
+  <tabstop>external_force_y_spinbox</tabstop>
+  <tabstop>external_force_z_spinbox</tabstop>
+  <tabstop>set_external_force_button</tabstop>
+  <tabstop>set_mode_button</tabstop>
+  <tabstop>quit_button</tabstop>
+  <tabstop>tab_manager</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../robotis_op2_gui/resources/images.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_Quit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindowDesign</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>quit_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindowDesign</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>859</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>469</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

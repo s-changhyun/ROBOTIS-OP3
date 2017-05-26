@@ -1,0 +1,3 @@
+geometry_msgs/Pose global_to_pelvis
+geometry_msgs/Pose global_to_right_foot
+geometry_msgs/Pose global_to_left_foot

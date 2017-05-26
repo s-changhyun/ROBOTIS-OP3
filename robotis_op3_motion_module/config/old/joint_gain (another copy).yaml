@@ -1,0 +1,140 @@
+head_pan:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+head_tilt:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+l_ank_pitch:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 7
+  fb_p_joint_position: 10
+  fb_p_torque: 0.5
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_ank_roll:
+  fb_d_joint_position: 0.1
+  fb_i_joint_position: 3
+  fb_p_joint_position: 6
+  fb_p_torque: 0.01
+  ff_joint_velocity: 0.05
+  ff_torque: 1
+l_el:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+l_hip_pitch:
+  fb_d_joint_position: 0.3
+  fb_i_joint_position: 5
+  fb_p_joint_position: 10
+  fb_p_torque: 0.4
+  ff_joint_velocity: 0.15
+  ff_torque: 1
+l_hip_roll:
+  fb_d_joint_position: 0.1
+  fb_i_joint_position: 1
+  fb_p_joint_position: 3
+  fb_p_torque: 0.01
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_hip_yaw:
+  fb_d_joint_position: 0.2
+  fb_i_joint_position: 0.1
+  fb_p_joint_position: 0.5
+  fb_p_torque: 0.01
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+l_knee:
+  fb_d_joint_position: 0.2
+  fb_i_joint_position: 10
+  fb_p_joint_position: 15
+  fb_p_torque: 0.6
+  ff_joint_velocity: 0.25
+  ff_torque: 1
+l_sho_pitch:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+l_sho_roll:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+r_ank_pitch:
+  fb_d_joint_position: 0.05
+  fb_i_joint_position: 7
+  fb_p_joint_position: 10
+  fb_p_torque: 0.5
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_ank_roll:
+  fb_d_joint_position: 0.1
+  fb_i_joint_position: 3
+  fb_p_joint_position: 6
+  fb_p_torque: 0.01
+  ff_joint_velocity: 0.05
+  ff_torque: 1
+r_el:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+r_hip_pitch:
+  fb_d_joint_position: 0.3
+  fb_i_joint_position: 5
+  fb_p_joint_position: 10
+  fb_p_torque: 0.4
+  ff_joint_velocity: 0.15
+  ff_torque: 1
+r_hip_roll:
+  fb_d_joint_position: 0.1
+  fb_i_joint_position: 1
+  fb_p_joint_position: 3
+  fb_p_torque: 0.01
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_hip_yaw:
+  fb_d_joint_position: 0.2
+  fb_i_joint_position: 0.1
+  fb_p_joint_position: 0.5
+  fb_p_torque: 0.01
+  ff_joint_velocity: 0.1
+  ff_torque: 1
+r_knee:
+  fb_d_joint_position: 0.2
+  fb_i_joint_position: 10
+  fb_p_joint_position: 15
+  fb_p_torque: 0.6
+  ff_joint_velocity: 0.25
+  ff_torque: 1
+r_sho_pitch:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0
+r_sho_roll:
+  fb_d_joint_position: 0
+  fb_i_joint_position: 0
+  fb_p_joint_position: 0
+  fb_p_torque: 0
+  ff_joint_velocity: 0
+  ff_torque: 0

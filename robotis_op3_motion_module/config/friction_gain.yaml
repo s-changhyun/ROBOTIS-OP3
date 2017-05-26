@@ -1,0 +1,48 @@
+l_ank_pitch:
+  friction_dynamic: 0.1
+  friction_static: 0.2
+  friction_viscous: 0.05
+l_ank_roll:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+l_hip_pitch:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+l_hip_roll:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+l_hip_yaw:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+l_knee:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+r_ank_pitch:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+r_ank_roll:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+r_hip_pitch:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+r_hip_roll:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+r_hip_yaw:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
+r_knee:
+  friction_dynamic: 0
+  friction_static: 0
+  friction_viscous: 0
