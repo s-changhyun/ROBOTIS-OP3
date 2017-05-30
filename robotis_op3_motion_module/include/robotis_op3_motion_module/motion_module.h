@@ -58,7 +58,7 @@
 
 #include "robotis_op3_kinematics_dynamics/kinematics_dynamics.h"
 
-#include "robotis_op3_online_walking/online_walking.h"
+//#include "robotis_op3_online_walking/online_walking.h"
 
 #include "robotis_op3_motion_module_msgs/WholebodyJointPose.h"
 #include "robotis_op3_motion_module_msgs/WholebodyKinematicsPose.h"
@@ -202,10 +202,10 @@ private:
   // kinematics dynamics parameters
   robotis_op3::KinematicsDynamics *robotis_;
 
-  bool walking_ctrl_mode_;
+//  bool walking_ctrl_mode_;
   bool joint_ctrl_mode_;
 
-  std::map<std::string, JointPose>::iterator op3_walking_joint_it_[12];
+//  std::map<std::string, JointPose>::iterator op3_walking_joint_it_[12];
   Eigen::Matrix4d mat_pelvis_to_chest_;
   robotis_framework::Pose3D pose3d_g_to_chest_;
   boost::mutex    process_mutex_;

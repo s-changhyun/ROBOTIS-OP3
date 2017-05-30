@@ -18,7 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
   robotis_framework_common
   scilab_optimization
   robotis_op3_kinematics_dynamics
-  robotis_op3_online_walking
+  #robotis_op3_online_walking
   robotis_op3_motion_module_msgs
 )
 
@@ -50,7 +50,7 @@ include_directories(
 )
 
 link_directories(
-  /usr/lib/scilab
+  #/usr/lib/scilab
 )
 
 add_library(robotis_op3_motion_module
@@ -61,6 +61,6 @@ add_dependencies(robotis_op3_motion_module ${${PROJECT_NAME}_EXPORTED_TARGETS} $
 
 target_link_libraries(robotis_op3_motion_module
   yaml-cpp
-  /usr/lib/scilab/libscilab.so
+  #/usr/lib/scilab/libscilab.so
   ${catkin_LIBRARIES}
 )

@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     std::string init_file   = nh.param<std::string>("init_file_path", "");
 
     /* gazebo simulation */
-    controller->gazebo_mode_ = nh.param<bool>("gazebo", false);
+    controller->gazebo_mode_ = nh.param<bool>("is_gazebo", false);
     if(controller->gazebo_mode_ == true)
     {
         ROS_WARN("SET TO GAZEBO MODE!");

@@ -46,7 +46,7 @@ MotionModule::MotionModule()
 {
   enable_       = false;
   module_name_  = "motion_module";
-  control_mode_ = robotis_framework::PositionControl;
+  control_mode_ = robotis_framework::TorqueControl;
 
   //  result_["r_sho_pitch"] = new robotis_framework::DynamixelState();
   //  result_["l_sho_pitch"] = new robotis_framework::DynamixelState();
@@ -160,7 +160,7 @@ MotionModule::MotionModule()
   total_mass_ = robotis_->calcTotalMass(0);
   ROS_INFO("total mass: %f", total_mass_);
 
-  walking_ctrl_mode_ = false;
+//  walking_ctrl_mode_ = false;
   joint_ctrl_mode_   = true;
 }
 
@@ -174,28 +174,28 @@ void MotionModule::initialize(const int control_cycle_msec, robotis_framework::R
   control_cycle_sec_ = control_cycle_msec * 0.001;
   ROS_INFO("control cycle : %f", control_cycle_sec_);
   queue_thread_ = boost::thread(boost::bind(&MotionModule::queueThread, this));
-  OnlineWalkingModule::getInstance()->initialize(control_cycle_msec, robot);
-  walking_ctrl_mode_ = false;
+//  OnlineWalkingModule::getInstance()->initialize(control_cycle_msec, robot);
+//  walking_ctrl_mode_ = false;
   joint_ctrl_mode_   = true;
 
-  op3_walking_joint_it_[ 0] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_hip_yaw"  );
-  op3_walking_joint_it_[ 1] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_hip_roll" );
-  op3_walking_joint_it_[ 2] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_hip_pitch");
-  op3_walking_joint_it_[ 3] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_knee"     );
-  op3_walking_joint_it_[ 4] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_ank_pitch");
-  op3_walking_joint_it_[ 5] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_ank_roll" );
-  op3_walking_joint_it_[ 6] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_hip_yaw"  );
-  op3_walking_joint_it_[ 7] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_hip_roll" );
-  op3_walking_joint_it_[ 8] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_hip_pitch");
-  op3_walking_joint_it_[ 9] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_knee"     );
-  op3_walking_joint_it_[10] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_ank_pitch");
-  op3_walking_joint_it_[11] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_ank_roll" );
+//  op3_walking_joint_it_[ 0] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_hip_yaw"  );
+//  op3_walking_joint_it_[ 1] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_hip_roll" );
+//  op3_walking_joint_it_[ 2] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_hip_pitch");
+//  op3_walking_joint_it_[ 3] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_knee"     );
+//  op3_walking_joint_it_[ 4] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_ank_pitch");
+//  op3_walking_joint_it_[ 5] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("r_ank_roll" );
+//  op3_walking_joint_it_[ 6] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_hip_yaw"  );
+//  op3_walking_joint_it_[ 7] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_hip_roll" );
+//  op3_walking_joint_it_[ 8] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_hip_pitch");
+//  op3_walking_joint_it_[ 9] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_knee"     );
+//  op3_walking_joint_it_[10] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_ank_pitch");
+//  op3_walking_joint_it_[11] = OnlineWalkingModule::getInstance()->joint_name_to_pose_.find("l_ank_roll" );
 
-  OnlineWalkingModule::getInstance()->setModuleEnable(true);
+//  OnlineWalkingModule::getInstance()->setModuleEnable(true);
 
 
   mat_pelvis_to_chest_ = robotis_framework::getTransformationXYZRPY(0.005, 0, 0.0907, 0, 0, 0);
-  pose3d_g_to_chest_ = robotis_framework::getPose3DfromTransformMatrix(OnlineWalkingModule::getInstance()->desired_matrix_g_to_pelvis_ * mat_pelvis_to_chest_);
+//  pose3d_g_to_chest_ = robotis_framework::getPose3DfromTransformMatrix(OnlineWalkingModule::getInstance()->desired_matrix_g_to_pelvis_ * mat_pelvis_to_chest_);
 }
 
 void MotionModule::queueThread()
@@ -928,17 +928,17 @@ void MotionModule::setCtrlModeMsgCallback(const std_msgs::String::ConstPtr& msg)
 {
   if(msg->data == "walking")
   {
-    walking_ctrl_mode_ = true;
+//    walking_ctrl_mode_ = true;
     joint_ctrl_mode_   = false;
   }
   else if(msg->data == "joint_ctrl")
   {
-    walking_ctrl_mode_ = false;
+//    walking_ctrl_mode_ = false;
     joint_ctrl_mode_   = true;
   }
   else
   {
-    walking_ctrl_mode_ = false;
+//    walking_ctrl_mode_ = false;
     joint_ctrl_mode_   = false;
     ROS_ERROR("Invalid Ctrl Mode");
   }
@@ -1307,83 +1307,83 @@ void MotionModule::process(std::map<std::string, robotis_framework::Dynamixel *>
 
     setEndTrajectory();
   }
-  else if(walking_ctrl_mode_ == true)
-  {
-    OnlineWalkingModule *op3_online_walking = OnlineWalkingModule::getInstance();
-    op3_online_walking->process(dxls, sensors);
+//  else if(walking_ctrl_mode_ == true)
+//  {
+//    OnlineWalkingModule *op3_online_walking = OnlineWalkingModule::getInstance();
+//    op3_online_walking->process(dxls, sensors);
 
-    mat_pelvis_to_chest_ = robotis_framework::getTransformationXYZRPY(0, 0, 0.0285, 0, 0, 0);
-    pose3d_g_to_chest_ = robotis_framework::getPose3DfromTransformMatrix(op3_online_walking->desired_matrix_g_to_pelvis_ * mat_pelvis_to_chest_);
+//    mat_pelvis_to_chest_ = robotis_framework::getTransformationXYZRPY(0, 0, 0.0285, 0, 0, 0);
+//    pose3d_g_to_chest_ = robotis_framework::getPose3DfromTransformMatrix(op3_online_walking->desired_matrix_g_to_pelvis_ * mat_pelvis_to_chest_);
 
-    robotis_->link_data_[ID_PELVIS_X]->relative_position_.coeffRef(0,0)     = pose3d_g_to_chest_.x;
-    robotis_->link_data_[ID_PELVIS_Y]->relative_position_.coeffRef(0,0)     = pose3d_g_to_chest_.y;
-    robotis_->link_data_[ID_PELVIS_Z]->relative_position_.coeffRef(0,0)     = pose3d_g_to_chest_.z;
-    robotis_->link_data_[ID_PELVIS_ROLL]->relative_position_.coeffRef(0,0)  = pose3d_g_to_chest_.roll;
-    robotis_->link_data_[ID_PELVIS_PITCH]->relative_position_.coeffRef(0,0) = pose3d_g_to_chest_.pitch;
-    robotis_->link_data_[ID_PELVIS_YAW]->relative_position_.coeffRef(0,0)   = pose3d_g_to_chest_.yaw;
+//    robotis_->link_data_[ID_PELVIS_X]->relative_position_.coeffRef(0,0)     = pose3d_g_to_chest_.x;
+//    robotis_->link_data_[ID_PELVIS_Y]->relative_position_.coeffRef(0,0)     = pose3d_g_to_chest_.y;
+//    robotis_->link_data_[ID_PELVIS_Z]->relative_position_.coeffRef(0,0)     = pose3d_g_to_chest_.z;
+//    robotis_->link_data_[ID_PELVIS_ROLL]->relative_position_.coeffRef(0,0)  = pose3d_g_to_chest_.roll;
+//    robotis_->link_data_[ID_PELVIS_PITCH]->relative_position_.coeffRef(0,0) = pose3d_g_to_chest_.pitch;
+//    robotis_->link_data_[ID_PELVIS_YAW]->relative_position_.coeffRef(0,0)   = pose3d_g_to_chest_.yaw;
 
-    //r leg
-    robotis_->link_data_[joint_name_to_id_["r_hip_yaw"]]->joint_angle_          = op3_walking_joint_it_[ 0]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["r_hip_yaw"]]->joint_velocity_       = op3_walking_joint_it_[ 0]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["r_hip_yaw"]]->joint_acceleration_   = op3_walking_joint_it_[ 0]->second.acceleration_;
+//    //r leg
+//    robotis_->link_data_[joint_name_to_id_["r_hip_yaw"]]->joint_angle_          = op3_walking_joint_it_[ 0]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_yaw"]]->joint_velocity_       = op3_walking_joint_it_[ 0]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_yaw"]]->joint_acceleration_   = op3_walking_joint_it_[ 0]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["r_hip_roll"]]->joint_angle_         = op3_walking_joint_it_[ 1]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["r_hip_roll"]]->joint_velocity_      = op3_walking_joint_it_[ 1]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["r_hip_roll"]]->joint_acceleration_  = op3_walking_joint_it_[ 1]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_roll"]]->joint_angle_         = op3_walking_joint_it_[ 1]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_roll"]]->joint_velocity_      = op3_walking_joint_it_[ 1]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_roll"]]->joint_acceleration_  = op3_walking_joint_it_[ 1]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["r_hip_pitch"]]->joint_angle_        = op3_walking_joint_it_[ 2]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["r_hip_pitch"]]->joint_velocity_     = op3_walking_joint_it_[ 2]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["r_hip_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[ 2]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_pitch"]]->joint_angle_        = op3_walking_joint_it_[ 2]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_pitch"]]->joint_velocity_     = op3_walking_joint_it_[ 2]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["r_hip_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[ 2]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["r_knee"]]->joint_angle_             = op3_walking_joint_it_[ 3]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["r_knee"]]->joint_velocity_          = op3_walking_joint_it_[ 3]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["r_knee"]]->joint_acceleration_      = op3_walking_joint_it_[ 3]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["r_knee"]]->joint_angle_             = op3_walking_joint_it_[ 3]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["r_knee"]]->joint_velocity_          = op3_walking_joint_it_[ 3]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["r_knee"]]->joint_acceleration_      = op3_walking_joint_it_[ 3]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["r_ank_pitch"]]->joint_angle_        = op3_walking_joint_it_[ 4]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["r_ank_pitch"]]->joint_velocity_     = op3_walking_joint_it_[ 4]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["r_ank_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[ 4]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["r_ank_pitch"]]->joint_angle_        = op3_walking_joint_it_[ 4]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["r_ank_pitch"]]->joint_velocity_     = op3_walking_joint_it_[ 4]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["r_ank_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[ 4]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["r_ank_roll"]]->joint_angle_         = op3_walking_joint_it_[ 5]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["r_ank_roll"]]->joint_velocity_      = op3_walking_joint_it_[ 5]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["r_ank_roll"]]->joint_acceleration_  = op3_walking_joint_it_[ 5]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["r_ank_roll"]]->joint_angle_         = op3_walking_joint_it_[ 5]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["r_ank_roll"]]->joint_velocity_      = op3_walking_joint_it_[ 5]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["r_ank_roll"]]->joint_acceleration_  = op3_walking_joint_it_[ 5]->second.acceleration_;
 
-    //l leg
-    robotis_->link_data_[joint_name_to_id_["l_hip_yaw"]]->joint_angle_          = op3_walking_joint_it_[ 6]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["l_hip_yaw"]]->joint_velocity_       = op3_walking_joint_it_[ 6]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["l_hip_yaw"]]->joint_acceleration_   = op3_walking_joint_it_[ 6]->second.acceleration_;
+//    //l leg
+//    robotis_->link_data_[joint_name_to_id_["l_hip_yaw"]]->joint_angle_          = op3_walking_joint_it_[ 6]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_yaw"]]->joint_velocity_       = op3_walking_joint_it_[ 6]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_yaw"]]->joint_acceleration_   = op3_walking_joint_it_[ 6]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["l_hip_roll"]]->joint_angle_         = op3_walking_joint_it_[ 7]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["l_hip_roll"]]->joint_velocity_      = op3_walking_joint_it_[ 7]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["l_hip_roll"]]->joint_acceleration_  = op3_walking_joint_it_[ 7]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_roll"]]->joint_angle_         = op3_walking_joint_it_[ 7]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_roll"]]->joint_velocity_      = op3_walking_joint_it_[ 7]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_roll"]]->joint_acceleration_  = op3_walking_joint_it_[ 7]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["l_hip_pitch"]]->joint_angle_        = op3_walking_joint_it_[ 8]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["l_hip_pitch"]]->joint_velocity_     = op3_walking_joint_it_[ 8]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["l_hip_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[ 8]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_pitch"]]->joint_angle_        = op3_walking_joint_it_[ 8]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_pitch"]]->joint_velocity_     = op3_walking_joint_it_[ 8]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["l_hip_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[ 8]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["l_knee"]]->joint_angle_             = op3_walking_joint_it_[ 9]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["l_knee"]]->joint_velocity_          = op3_walking_joint_it_[ 9]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["l_knee"]]->joint_acceleration_      = op3_walking_joint_it_[ 9]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["l_knee"]]->joint_angle_             = op3_walking_joint_it_[ 9]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["l_knee"]]->joint_velocity_          = op3_walking_joint_it_[ 9]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["l_knee"]]->joint_acceleration_      = op3_walking_joint_it_[ 9]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["l_ank_pitch"]]->joint_angle_        = op3_walking_joint_it_[10]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["l_ank_pitch"]]->joint_velocity_     = op3_walking_joint_it_[10]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["l_ank_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[10]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["l_ank_pitch"]]->joint_angle_        = op3_walking_joint_it_[10]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["l_ank_pitch"]]->joint_velocity_     = op3_walking_joint_it_[10]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["l_ank_pitch"]]->joint_acceleration_ = op3_walking_joint_it_[10]->second.acceleration_;
 
-    robotis_->link_data_[joint_name_to_id_["l_ank_roll"]]->joint_angle_         = op3_walking_joint_it_[11]->second.position_;
-    robotis_->link_data_[joint_name_to_id_["l_ank_roll"]]->joint_velocity_      = op3_walking_joint_it_[11]->second.velocity_;
-    robotis_->link_data_[joint_name_to_id_["l_ank_roll"]]->joint_acceleration_  = op3_walking_joint_it_[11]->second.acceleration_;
+//    robotis_->link_data_[joint_name_to_id_["l_ank_roll"]]->joint_angle_         = op3_walking_joint_it_[11]->second.position_;
+//    robotis_->link_data_[joint_name_to_id_["l_ank_roll"]]->joint_velocity_      = op3_walking_joint_it_[11]->second.velocity_;
+//    robotis_->link_data_[joint_name_to_id_["l_ank_roll"]]->joint_acceleration_  = op3_walking_joint_it_[11]->second.acceleration_;
 
-    for (int id=1; id<=MAX_JOINT_ID; id++)
-    {
-      goal_joint_position_(id) = robotis_->link_data_[id]->joint_angle_;
-      goal_joint_velocity_(id) = robotis_->link_data_[id]->joint_velocity_;
-      goal_joint_acceleration_(id) = robotis_->link_data_[id]->joint_acceleration_ ;
-    }
+//    for (int id=1; id<=MAX_JOINT_ID; id++)
+//    {
+//      goal_joint_position_(id) = robotis_->link_data_[id]->joint_angle_;
+//      goal_joint_velocity_(id) = robotis_->link_data_[id]->joint_velocity_;
+//      goal_joint_acceleration_(id) = robotis_->link_data_[id]->joint_acceleration_ ;
+//    }
 
-//    for(unsigned int idx = 0; idx < 12; idx++)
-//      std::cout << op3_walking_joint_it_[idx]->second.position_ << " " << op3_walking_joint_it_[idx]->second.velocity_ << " "<< op3_walking_joint_it_[idx]->second.acceleration_ << " ";
-//
-//    std::cout << std::endl;
-  }
+////    for(unsigned int idx = 0; idx < 12; idx++)
+////      std::cout << op3_walking_joint_it_[idx]->second.position_ << " " << op3_walking_joint_it_[idx]->second.velocity_ << " "<< op3_walking_joint_it_[idx]->second.acceleration_ << " ";
+////
+////    std::cout << std::endl;
+//  }
 
 
   robotis_->calcForwardAllKinematics(0); // forward kinematics
@@ -1410,14 +1410,14 @@ void MotionModule::process(std::map<std::string, robotis_framework::Dynamixel *>
        state_iter != result_.end(); state_iter++)
   {
     std::string joint_name = state_iter->first;
-    result_[joint_name]->goal_position_ = goal_joint_position_(joint_name_to_id_[joint_name]);
-    //    result_[joint_name]->goal_torque_ = joint_controller_output_with_friction(joint_name_to_id_[joint_name]);
+//    result_[joint_name]->goal_position_ = goal_joint_position_(joint_name_to_id_[joint_name]);
+        result_[joint_name]->goal_torque_ = joint_controller_output_with_friction(joint_name_to_id_[joint_name]);
 
     goal_joint_state_msg.name.push_back(joint_name);
     goal_joint_state_msg.position.push_back(goal_joint_position_(joint_name_to_id_[joint_name]));
     goal_joint_state_msg.velocity.push_back(goal_joint_velocity_(joint_name_to_id_[joint_name]));
-    goal_joint_state_msg.effort.push_back(joint_controller_output_with_friction(joint_name_to_id_[joint_name]));
-//    goal_joint_state_msg.effort.push_back(goal_joint_effort_(joint_name_to_id_[joint_name]));
+//    goal_joint_state_msg.effort.push_back(joint_controller_output_with_friction(joint_name_to_id_[joint_name]));
+    goal_joint_state_msg.effort.push_back(goal_joint_effort_(joint_name_to_id_[joint_name]));
 
     friction_msg.name.push_back(joint_name);
     friction_msg.effort.push_back(friction_output(joint_name_to_id_[joint_name]));

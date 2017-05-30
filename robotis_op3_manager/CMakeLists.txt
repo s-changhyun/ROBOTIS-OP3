@@ -14,8 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
   robotis_math
   cmake_modules
   robotis_op3_kinematics_dynamics
-  scilab_optimization
-  robotis_op3_online_walking
+  #scilab_optimization
+  #robotis_op3_online_walking
   robotis_op3_motion_module
 )
 
@@ -32,7 +32,8 @@ find_package(Eigen REQUIRED)
 ################################################################################
 # Catkin specific configuration
 ################################################################################
-catkin_package()
+catkin_package(
+)
 
 ################################################################################
 # Build
@@ -43,9 +44,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(robotis_op3_manager src/robotis_op3_manager.cpp)
+add_executable(robotis_op3_manager
+  src/robotis_op3_manager.cpp
+)
 
-add_dependencies(robotis_op3_manager ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(robotis_op3_manager
+  ${${PROJECT_NAME}_EXPORTED_TARGETS}
+  ${catkin_EXPORTED_TARGETS}
+)
 
 target_link_libraries(robotis_op3_manager
   ${catkin_LIBRARIES}
