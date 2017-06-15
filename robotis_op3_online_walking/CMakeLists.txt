@@ -1,22 +1,24 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(robotis_op3_manager)
+project(robotis_op3_online_walking)
 
 ################################################################################
 # Packages
 ################################################################################
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  dynamixel_sdk
-  robotis_framework_common
-  robotis_device
-  robotis_controller
-  robotis_controller_msgs
-  robotis_math
+  std_msgs
+  sensor_msgs
+  geometry_msgs
   cmake_modules
-  robotis_op3_kinematics_dynamics
+  eigen_conversions
+  dynamixel_sdk
+  robotis_device
+  robotis_math
+  robotis_controller_msgs
+  robotis_framework_common
   #scilab_optimization
-  robotis_op3_online_walking
-  robotis_op3_motion_module
+  robotis_op3_kinematics_dynamics
+  robotis_op3_motion_module_msgs
 )
 
 find_package(Eigen REQUIRED)
@@ -33,6 +35,10 @@ find_package(Eigen REQUIRED)
 # Catkin specific configuration
 ################################################################################
 catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES robotis_op3_online_walking
+#  CATKIN_DEPENDS roscpp
+#  DEPENDS system_lib
 )
 
 ################################################################################
@@ -40,19 +46,20 @@ catkin_package(
 ################################################################################
 include_directories(
   include
-  ${Eigen_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
+  ${Eigen_INCLUDE_DIRS}
 )
 
-add_executable(robotis_op3_manager
-  src/robotis_op3_manager.cpp
-)
 
-add_dependencies(robotis_op3_manager
-  ${${PROJECT_NAME}_EXPORTED_TARGETS}
-  ${catkin_EXPORTED_TARGETS}
-)
+add_library(robotis_op3_online_walking
+  src/op3_online_walking.cpp
+  src/online_walking.cpp
+) 
 
-target_link_libraries(robotis_op3_manager
+add_dependencies(robotis_op3_online_walking ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+target_link_libraries(robotis_op3_online_walking
+  yaml-cpp
+  #/usr/lib/scilab/libscilab.so
   ${catkin_LIBRARIES}
 )

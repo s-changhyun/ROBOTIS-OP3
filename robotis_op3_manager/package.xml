@@ -5,8 +5,8 @@
   <description>The robotis_op3_manager package</description>
 
   <license>BSD</license>
-  <author email="sch@robotis.com">SCH</author>
-  <maintainer email="sch@robotis.com">SCH</maintainer>
+  <author email="sch@robotis.com">sch</author>
+  <maintainer email="sch@robotis.com">sch</maintainer>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>dynamixel_sdk</build_depend>
@@ -14,10 +14,10 @@
   <build_depend>robotis_device</build_depend>
   <build_depend>robotis_controller</build_depend>
   <build_depend>robotis_controller_msgs</build_depend>
-<!--  <build_depend>robotis_op3_online_walking</build_depend>-->
+  <build_depend>robotis_op3_online_walking</build_depend>
   <build_depend>cmake_modules</build_depend>
   <build_depend>robotis_op3_motion_module</build_depend>
   <run_depend>roscpp</run_depend>
   <run_depend>robotis_controller</run_depend>
-<!--  <run_depend>robotis_op3_online_walking</run_depend>-->
+  <run_depend>robotis_op3_online_walking</run_depend>
 </package>

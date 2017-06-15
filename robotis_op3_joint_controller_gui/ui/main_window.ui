@@ -14,7 +14,7 @@
    <string>QRosApp</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../robotis_op2_gui/resources/images.qrc">
+   <iconset resource="../../robotis_op3_gui/resources/images.qrc">
     <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
   </property>
   <property name="locale">
@@ -115,7 +115,7 @@
      <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -2407,7 +2407,7 @@
   <tabstop>tab_manager</tabstop>
  </tabstops>
  <resources>
-  <include location="../../robotis_op2_gui/resources/images.qrc"/>
+  <include location="../../robotis_op3_gui/resources/images.qrc"/>
  </resources>
  <connections>
   <connection>

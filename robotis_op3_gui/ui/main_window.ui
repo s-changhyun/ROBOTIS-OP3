@@ -20,7 +20,7 @@
    <string>QRosApp</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/images.qrc">
+   <iconset resource="../../robotis_op3_joint_controller_gui/resources/images.qrc">
     <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
   </property>
   <property name="locale">
@@ -193,7 +193,7 @@
               <number>3</number>
              </property>
              <property name="minimum">
-              <double>0.000000000000000</double>
+              <double>-360.000000000000000</double>
              </property>
              <property name="maximum">
               <double>360.000000000000000</double>
@@ -315,7 +315,7 @@
               <double>100.000000000000000</double>
              </property>
              <property name="value">
-              <double>0.300000000000000</double>
+              <double>0.500000000000000</double>
              </property>
             </widget>
            </item>
@@ -1256,7 +1256,7 @@
   </action>
  </widget>
  <resources>
-  <include location="../resources/images.qrc"/>
+  <include location="../../robotis_op3_joint_controller_gui/resources/images.qrc"/>
  </resources>
  <connections>
   <connection>

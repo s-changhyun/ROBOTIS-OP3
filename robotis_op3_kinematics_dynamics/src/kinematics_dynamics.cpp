@@ -162,17 +162,21 @@ KinematicsDynamics::KinematicsDynamics(TreeSelect tree)
     link_data_[11]->parent_            = 9;
     link_data_[11]->sibling_           = -1;
     link_data_[11]->child_             = 13;
-    link_data_[11]->mass_              = 0.06934;
+    link_data_[11]->mass_              = 0.01181;
     link_data_[11]->relative_position_ = robotis_framework::getTransitionXYZ(-0.0241,0.019,0.0);
     link_data_[11]->joint_axis_        = robotis_framework::getTransitionXYZ(1.0,0.0,0.0);
-    link_data_[11]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.02373,-0.01037,-0.02760);
-    link_data_[11]->inertia_           = robotis_framework::getInertiaXYZ(0.00004034,0.00000019,0.00000012,0.00007874,-0.00000101,0.00011579);
+    link_data_[11]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.02243,0.0,-0.02076);
+    link_data_[11]->inertia_           = robotis_framework::getInertiaXYZ(0.00000151,0.0,-0.00000001,0.00000430,0.0,0.00000412);
+//    link_data_[11]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.02373,-0.01037,-0.02760);
+//    link_data_[11]->inertia_           = robotis_framework::getInertiaXYZ(0.00004034,0.00000019,0.00000012,0.00007874,-0.00000101,0.00011579);
 
     link_data_[13]->name_              = "r_foot";
     link_data_[13]->parent_            = 11;
     link_data_[13]->sibling_           = -1;
     link_data_[13]->child_             = -1;
-    link_data_[13]->relative_position_ = robotis_framework::getTransitionXYZ(0.0,0.0,-0.0305);
+    link_data_[13]->relative_position_ = robotis_framework::getTransitionXYZ(0.0241,0.0,-0.0305);
+    link_data_[13]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.0,-0.01250,-0.00051);
+    link_data_[13]->inertia_           = robotis_framework::getInertiaXYZ(0.00003664,0.0,0.0,0.00007375,0.0,0.00011012);
 
     /* ----- left leg -----*/
 
@@ -233,14 +237,18 @@ KinematicsDynamics::KinematicsDynamics(TreeSelect tree)
     link_data_[12]->mass_              = 0.06934;
     link_data_[12]->relative_position_ = robotis_framework::getTransitionXYZ(-0.0241,-0.019,0.0);
     link_data_[12]->joint_axis_        = robotis_framework::getTransitionXYZ(1.0,0.0,0.0);
-    link_data_[12]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.02373,0.01037,-0.02760);
-    link_data_[12]->inertia_           = robotis_framework::getInertiaXYZ(0.00004034,-0.00000019,0.00000012,0.00007874,0.00000101,0.00011579);
+    link_data_[12]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.02243,0.0,-0.02076);
+    link_data_[12]->inertia_           = robotis_framework::getInertiaXYZ(0.00000151,0.0,-0.00000001,0.00000430,0.0,0.00000412);
+//    link_data_[12]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.02373,0.01037,-0.02760);
+//    link_data_[12]->inertia_           = robotis_framework::getInertiaXYZ(0.00004034,-0.00000019,0.00000012,0.00007874,0.00000101,0.00011579);
 
     link_data_[14]->name_              = "l_foot";
     link_data_[14]->parent_            = 12;
     link_data_[14]->sibling_           = -1;
     link_data_[14]->child_             = -1;
-    link_data_[14]->relative_position_ = robotis_framework::getTransitionXYZ(0.0,0.0,-0.0305);
+    link_data_[14]->relative_position_ = robotis_framework::getTransitionXYZ(0.0241,0.0,-0.0305);
+    link_data_[14]->center_of_mass_    = robotis_framework::getTransitionXYZ(0.0,0.01250,-0.00051);
+    link_data_[14]->inertia_           = robotis_framework::getInertiaXYZ(0.00003664,0.0,0.0,0.00007375,0.0,0.00011012);
   }
 
   thigh_length_m_ = std::fabs(link_data_[ID_R_LEG_START+2*3]->relative_position_.coeff(2,0));

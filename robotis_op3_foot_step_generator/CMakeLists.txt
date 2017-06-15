@@ -1,24 +1,20 @@
+################################################################################
+# CMake
+################################################################################
 cmake_minimum_required(VERSION 2.8.3)
-project(robotis_op3_motion_module)
+project(robotis_op3_foot_step_generator)
 
 ################################################################################
 # Packages
 ################################################################################
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  std_msgs
-  sensor_msgs
-  geometry_msgs
+  roslib
   cmake_modules
-  eigen_conversions
-  dynamixel_sdk
-  robotis_device
-  robotis_math
+  std_msgs
+  geometry_msgs
+  message_generation
   robotis_controller_msgs
-  robotis_framework_common
-  #scilab_optimization
-  robotis_op3_kinematics_dynamics
-  robotis_op3_online_walking
   robotis_op3_motion_module_msgs
 )
 
@@ -35,10 +31,7 @@ find_package(Eigen REQUIRED)
 ################################################################################
 # Catkin specific configuration
 ################################################################################
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES robotis_op3_motion_module
-)
+catkin_package()
 
 ################################################################################
 # Build
@@ -49,18 +42,31 @@ include_directories(
   ${Eigen_INCLUDE_DIRS}
 )
 
-link_directories(
-  #/usr/lib/scilab
+add_executable(robotis_op3_foot_step_generator
+   src/robotis_foot_step_generator.cpp 
+   src/message_callback.cpp
+   src/main.cpp
 )
 
-add_library(robotis_op3_motion_module
-  src/motion_module.cpp
-)
+add_dependencies(robotis_op3_foot_step_generator ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_dependencies(robotis_op3_motion_module ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-target_link_libraries(robotis_op3_motion_module
-  yaml-cpp
-  #/usr/lib/scilab/libscilab.so
+target_link_libraries(robotis_op3_foot_step_generator
   ${catkin_LIBRARIES}
 )
+
+################################################################################
+# Install
+################################################################################
+install(TARGETS robotis_op3_foot_step_generator
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
+################################################################################
+# Test
+################################################################################

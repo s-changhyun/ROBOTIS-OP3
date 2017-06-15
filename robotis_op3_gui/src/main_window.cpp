@@ -273,7 +273,7 @@ void MainWindow::on_turn_right_button_clicked(bool check)
 void MainWindow::on_turn_left_button_clicked(bool check)
 {
   robotis_op3_motion_module_msgs::FootStepCommand msg;
-  msg.command = "turn_left";
+  msg.command = "turn left";
   msg.step_num = ui_.step_number_spinbox->value();
   msg.step_time = ui_.step_time_spinbox->value();
   msg.step_length = ui_.step_length_spinbox->value();
