@@ -80,6 +80,11 @@ class MotionModule
     public robotis_framework::Singleton<MotionModule>
 {
 private:
+  int    test_id_;
+  double test_i_;
+  double old_value_;
+  double new_value_;
+
   double control_cycle_sec_;
   boost::thread queue_thread_;
 
@@ -201,6 +206,7 @@ private:
 
   // kinematics dynamics parameters
   robotis_op3::KinematicsDynamics *robotis_;
+  robotis_op3::KinematicsDynamics *robotis_present_;
 
   bool walking_ctrl_mode_;
   bool joint_ctrl_mode_;

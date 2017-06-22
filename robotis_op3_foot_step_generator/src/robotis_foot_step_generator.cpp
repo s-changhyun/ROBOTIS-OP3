@@ -180,6 +180,8 @@ void FootStepGenerator::getStepData(robotis_op3_motion_module_msgs::AddStepDataA
   step_data_array->clear();
   step_data_array_.clear();
 
+
+
   if(calcStep(ref_step_data, previous_step_type_, desired_step_type))
   {
     previous_step_type_ = desired_step_type;
@@ -349,21 +351,22 @@ bool FootStepGenerator::calcStep(const robotis_op3_motion_module_msgs::StepData&
   stp_data[0] = ref_step_data;
   stp_data[0].position_data.torso_yaw_angle_rad = 0.0*M_PI;
 
-  stp_data[0].position_data.right_foot_pose = poseLtoRF;
-  stp_data[0].position_data.left_foot_pose = poseLtoLF;
-  stp_data[0].time_data.start_time_delay_ratio_x     = 0.0;
-  stp_data[0].time_data.start_time_delay_ratio_y     = 0.0;
-  stp_data[0].time_data.start_time_delay_ratio_z     = 0.0;
-  stp_data[0].time_data.start_time_delay_ratio_roll  = 0.0;
-  stp_data[0].time_data.start_time_delay_ratio_pitch = 0.0;
-  stp_data[0].time_data.start_time_delay_ratio_yaw   = 0.0;
+  stp_data[0].position_data.right_foot_pose   = poseLtoRF;
+  stp_data[0].position_data.left_foot_pose    = poseLtoLF;
+
+  stp_data[0].time_data.start_time_delay_ratio_x        = 0.0;
+  stp_data[0].time_data.start_time_delay_ratio_y        = 0.0;
+  stp_data[0].time_data.start_time_delay_ratio_z        = 0.0;
+  stp_data[0].time_data.start_time_delay_ratio_roll     = 0.0;
+  stp_data[0].time_data.start_time_delay_ratio_pitch    = 0.0;
+  stp_data[0].time_data.start_time_delay_ratio_yaw      = 0.0;
+
   stp_data[0].time_data.finish_time_advance_ratio_x     = 0.0;
   stp_data[0].time_data.finish_time_advance_ratio_y     = 0.0;
   stp_data[0].time_data.finish_time_advance_ratio_z     = 0.0;
   stp_data[0].time_data.finish_time_advance_ratio_roll  = 0.0;
   stp_data[0].time_data.finish_time_advance_ratio_pitch = 0.0;
   stp_data[0].time_data.finish_time_advance_ratio_yaw   = 0.0;
-
 
   if(stp_data[0].time_data.walking_state != robotis_op3_motion_module_msgs::StepTimeData::IN_WALKING)
   {

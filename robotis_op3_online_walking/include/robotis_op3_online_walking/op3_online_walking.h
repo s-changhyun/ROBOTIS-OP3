@@ -47,7 +47,8 @@ public:
   void getReferenceStepDatafotAddition(robotis_framework::StepData *ref_step_data_for_addition);
 
   void setPreviewRefHeight(double height);
-  bool setInitialPose(double r_foot_x, double r_foot_y, double r_foot_z, double r_foot_roll, double r_foot_pitch, double r_foot_yaw,
+  bool setInitialPose(
+      double r_foot_x, double r_foot_y, double r_foot_z, double r_foot_roll, double r_foot_pitch, double r_foot_yaw,
       double l_foot_x, double l_foot_y, double l_foot_z, double l_foot_roll, double l_foot_pitch, double l_foot_yaw,
       double center_of_body_x, double center_of_body_y, double center_of_body_z,
       double center_of_body_roll, double center_of_body_pitch, double center_of_body_yaw);

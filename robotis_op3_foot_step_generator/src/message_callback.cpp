@@ -45,7 +45,7 @@ ros::Subscriber     g_footsteps_2d_sub;
 
 robotis_op3::FootStepGenerator g_foot_stp_generator;
 
-robotis_op3_motion_module_msgs::AddStepDataArray     add_step_data_array_srv;
+robotis_op3_motion_module_msgs::AddStepDataArray add_step_data_array_srv;
 robotis_op3_motion_module_msgs::FootStepCommand last_command;
 
 double g_last_command_time = 0;
@@ -110,7 +110,6 @@ void footStepCommandCallback(const robotis_op3_motion_module_msgs::FootStepComma
   last_command.step_length      = msg->step_length;
   last_command.side_step_length = msg->side_step_length;
   last_command.step_angle_rad   = msg->step_angle_rad;
-
 
   ROS_INFO("[Demo]  : Walking Command");
   ROS_INFO_STREAM("  command          : " << msg->command );
@@ -280,7 +279,7 @@ void footStepCommandCallback(const robotis_op3_motion_module_msgs::FootStepComma
   if(g_add_step_data_array_client.call(add_stp_data_srv) == true)
   {
     int add_stp_data_srv_result = add_stp_data_srv.response.result;
-    if(add_stp_data_srv_result== robotis_op3_motion_module_msgs::AddStepDataArray::Response::NO_ERROR)
+    if(add_stp_data_srv_result == robotis_op3_motion_module_msgs::AddStepDataArray::Response::NO_ERROR)
     {
       ROS_INFO("[Demo]  : Succeed to add step data array");
     }

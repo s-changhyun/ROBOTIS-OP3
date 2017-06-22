@@ -108,7 +108,6 @@ OnlineWalkingModule::OnlineWalkingModule()
   desired_matrix_g_to_rfoot_    = Eigen::MatrixXd::Identity(4,4);
   desired_matrix_g_to_lfoot_    = Eigen::MatrixXd::Identity(4,4);
 
-
   balance_update_with_loop_ = false;
   balance_update_duration_ = 2.0;
   balance_update_sys_time_ = 2.0;
@@ -116,12 +115,12 @@ OnlineWalkingModule::OnlineWalkingModule()
 
   double tf = balance_update_duration_;
   Eigen::MatrixXd A(6,6), B(6, 1);
-  A <<  0.0,     0.0,     0.0,    0.0,    0.0, 1.0,
-      0.0,   0.0,    0.0,    0.0,       1.0, 0.0,
-      0.0,   0.0,    0.0,    2.0,       0.0, 0.0,
-      tf*tf*tf*tf*tf,     tf*tf*tf*tf,      tf*tf*tf,        tf*tf,     tf, 1.0,
-      5.0*tf*tf*tf*tf,    4.0*tf*tf*tf,    3.0*tf*tf,    2.0*tf,        1.0, 0.0,
-      20.0*tf*tf*tf,      12.0*tf*tf,       6.0*tf,        2.0,        0.0, 0.0;
+  A <<  0.0,              0.0,            0.0,        0.0,      0.0,    1.0,
+        0.0,              0.0,            0.0,        0.0,      1.0,    0.0,
+        0.0,              0.0,            0.0,        2.0,      0.0,    0.0,
+        tf*tf*tf*tf*tf,   tf*tf*tf*tf,    tf*tf*tf,   tf*tf,    tf,     1.0,
+        5.0*tf*tf*tf*tf,  4.0*tf*tf*tf,   3.0*tf*tf,  2.0*tf,   1.0,    0.0,
+        20.0*tf*tf*tf,    12.0*tf*tf,     6.0*tf,     2.0,      0.0,    0.0;
 
   B << 0, 0, 0, 2.0, 0, 0;
 
